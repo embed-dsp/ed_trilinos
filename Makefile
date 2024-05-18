@@ -24,9 +24,6 @@ endif
 ifeq ($(findstring MINGW64, $(shell uname -s)), MINGW64)
 	SYSTEM = mingw64
 endif
-ifeq ($(findstring CYGWIN, $(shell uname -s)), CYGWIN)
-	SYSTEM = cygwin
-endif
 
 # Determine machine.
 MACHINE = $(shell uname -m)
@@ -86,7 +83,7 @@ all:
 	@echo ""
 	@echo "## Build"
 	@echo "make prepare"
-	@echo "make configure"
+	@echo "make configure [SERPAR=parallel]"
 	@echo "make compile [J=...]"
 	@echo ""
 	@echo "## Install"
